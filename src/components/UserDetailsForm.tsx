@@ -30,7 +30,7 @@ export default function UserDetailsForm({
   onRoleChange,
   onBuilderTitleChange,
 }: UserDetailsFormProps) {
-  
+
   const handleGenerateTitle = () => {
     const nextTitle = getRandomBuilderTitle(builderTitle);
     onBuilderTitleChange(nextTitle);
@@ -70,7 +70,7 @@ export default function UserDetailsForm({
           maxLength={30}
           className="w-full px-3 py-2 border border-neutral-800 rounded font-sans text-sm focus:outline-none focus:ring-1 focus:ring-neutral-800 bg-neutral-50/50 mb-1"
         />
-        
+
         {/* Quick select tags */}
         <div className="flex flex-wrap gap-1">
           {QUICK_ROLES.map((qr) => (
@@ -78,11 +78,10 @@ export default function UserDetailsForm({
               key={qr}
               type="button"
               onClick={() => onRoleChange(qr)}
-              className={`text-[8px] font-mono px-2 py-0.5 rounded border uppercase tracking-wider transition-colors ${
-                role.toLowerCase() === qr.toLowerCase()
+              className={`text-[8px] font-mono px-2 py-0.5 rounded border uppercase tracking-wider transition-colors ${role.toLowerCase() === qr.toLowerCase()
                   ? 'bg-neutral-800 text-white border-neutral-800 font-bold'
                   : 'bg-neutral-50 text-neutral-500 border-neutral-200 hover:border-neutral-300'
-              }`}
+                }`}
             >
               {qr}
             </button>
